@@ -72,7 +72,13 @@ function handleCM(event) {
   event.preventDefault();
 }
 
-function handleSaveClick() {}
+function handleSaveClick() {
+  const image = canvas.toDataURL("image/jpeg");
+  const link = document.createElement("a");
+  link.href = image;
+  link.download = "PaintJS[EXPORT]";
+  link.click();
+}
 
 if (canvas) {
   canvas.addEventListener("mousemove", onMouseMove);
